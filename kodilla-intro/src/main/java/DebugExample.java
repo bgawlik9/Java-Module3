@@ -9,9 +9,5 @@ public class DebugExample {
     sumAndDisplay(firstNumber, secondNumber);
 }
 
-    private static void sumAndDisplay(int a, int b) {
-        int result = a + b;
-
-        System.out.println(result);
-    }
+    private static void sumAndDisplay(int a, int b) g
 }
