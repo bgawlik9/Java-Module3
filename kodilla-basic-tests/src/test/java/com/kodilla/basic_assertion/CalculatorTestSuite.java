@@ -29,6 +29,7 @@ public class CalculatorTestSuite {
     }
     @Test
     public void testSquare(){
+
         Calculator calculator = new Calculator();
         double a = 5.2;
         double b = 0;

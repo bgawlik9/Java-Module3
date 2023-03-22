@@ -1,7 +1,7 @@
 package com.kodilla.abstracts.homework;
 
 public abstract class Job {
-int salary;
+private int salary;
 String responsibilities;
 
     public int getSalary() {
