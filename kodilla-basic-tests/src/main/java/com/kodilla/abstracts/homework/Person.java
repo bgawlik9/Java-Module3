@@ -38,4 +38,10 @@ public class Person {
         this.age = age;
         this.job = job;
     }
+    void showResponsibilities(Job job){
+
+        System.out.println(job.getResponsibilities());
+    }
+
+
 }
