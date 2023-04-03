@@ -37,6 +37,7 @@ public class BankTestSuite {
 
         bank.addCashMachine3(500);
         bank.addCashMachine3(100);
+        bank.addCashMachine3(0);
         int numberOfCashIn = bank.getNumberOfCashIn();
 
         assertEquals(3,numberOfCashIn);
