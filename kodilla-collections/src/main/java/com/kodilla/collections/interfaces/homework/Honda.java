@@ -15,12 +15,23 @@ public class Honda implements Car{
     @Override
     public void increaseSpeed() {
         this.speed +=15;
+        if(this.speed > 180)
+        {
+            System.out.println("Juz więcej nie pojedzie");
+            this.speed = 180;
+        }
 
     }
 
     @Override
     public void decreaseSpeed() {
-        this.speed -=15;
+
+        this.speed -= 10;
+        if(this.speed <= 0) {
+            System.out.println("Stoimy!");
+            this.speed = 0;
+
+        }
 
     }
 }

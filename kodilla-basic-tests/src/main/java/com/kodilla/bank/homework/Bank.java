@@ -9,13 +9,16 @@ public class Bank {
 
     CashMachine [] cashMachines;
 
+
     public Bank() {
         this.cashMachine1 = new CashMachine();
         this.cashMachine2 = new CashMachine();
         this.cashMachine3 = new CashMachine();
-        this.cashMachines = new CashMachine[] {cashMachine1,cashMachine2,cashMachine3};
-
+        this.cashMachines = new CashMachine[]{cashMachine1, cashMachine2, cashMachine3};
     }
+
+
+
     public void addCashMachine1 (int cash){
         this.cashMachine1.add(cash);
     }
@@ -42,7 +45,7 @@ public class Bank {
             banks += this.cashMachines[i].getNumberOfCashIn();
         }
         return banks;
-             
+
     }
 
     public int getNumberOfCashOut(){
@@ -53,15 +56,26 @@ public class Bank {
         return banks;
     }
     public double getAverageCashIn(){
-        double sum = this.cashMachine1.getCashInSum() + this.cashMachine2.getCashInSum() + this.cashMachine3.getCashInSum();
-        double numberOfTransactionsIn = this.cashMachine1.getNumberOfCashIn() + this.cashMachine2.getNumberOfCashIn() + this.cashMachine3.getNumberOfCashIn();
-        return sum/numberOfTransactionsIn;
+        double banks = 0;
+        for (int i = 0; i < this.cashMachines.length; i++) {
+            banks += this.cashMachines[i].getCashInSum();
+        }
+            double cashIn = 0;
+            for (int z = 0; z < this.cashMachines.length; z++) {
+                cashIn += this.cashMachines[z].getNumberOfCashIn();
+            }
+        return banks/cashIn;
     }
 
   public double getAverageCashOut(){
-        double sum = this.cashMachine1.getCashOutSum() + this.cashMachine2.getCashOutSum() + this.cashMachine3.getCashOutSum();
-        double numberOfTransactionsOut = this.cashMachine1.getNumberOfCashOut() + this.cashMachine2.getNumberOfCashOut() + this.cashMachine3.getNumberOfCashOut();
-        return sum/numberOfTransactionsOut;
-    }
+            double banks = 0;
+            for (int i = 0; i < this.cashMachines.length; i++) {
+                banks += this.cashMachines[i].getCashOutSum();
+            }
+      double cashOut = 0;
+      for (int z = 0; z < this.cashMachines.length; z++) {
+            cashOut += this.cashMachines[z].getNumberOfCashOut();
+      }
+        return banks/cashOut;
+    }}
 
-}
