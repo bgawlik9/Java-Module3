@@ -3,31 +3,25 @@ package com.kodilla.bank.homework;
 
 public class Bank {
 
-    private CashMachine cashMachine1;
-    private CashMachine cashMachine2;
-    private CashMachine cashMachine3;
 
-    CashMachine [] cashMachines;
+   private CashMachine [] cashMachines;
+   private int size;
 
 
     public Bank() {
-        this.cashMachine1 = new CashMachine();
-        this.cashMachine2 = new CashMachine();
-        this.cashMachine3 = new CashMachine();
-        this.cashMachines = new CashMachine[]{cashMachine1, cashMachine2, cashMachine3};
+        this.size = 0;
+        this.cashMachines = new CashMachine[0];
+    }
+    public void addCashMachine(CashMachine cashMachine){
+        this.size++;
+        CashMachine [] newTab = new CashMachine[this.size];
+        System.arraycopy(cashMachines,0,newTab,0,cashMachines.length);
+        newTab[this.size-1] = cashMachine;
+        this.cashMachines = newTab;
     }
 
 
 
-    public void addCashMachine1 (int cash){
-        this.cashMachine1.add(cash);
-    }
-    public void addCashMachine2 (int cash){
-        this.cashMachine2.add(cash);
-    }
-    public void addCashMachine3 (int cash){
-        this.cashMachine3.add(cash);
-    }
 
     public int getCashMachinesBalance(){
 
