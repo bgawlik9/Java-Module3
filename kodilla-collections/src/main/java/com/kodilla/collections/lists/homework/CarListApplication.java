@@ -17,6 +17,14 @@ public class CarListApplication {
         toyotas.add(new Toyota(2));
         toyotas.add(new Toyota(2));
         toyotas.add(new Toyota(1));
+        for (Toyota toyota: toyotas)
+        {
+            describeCar(toyota);
+
+        }
+        System.out.println("ilosc elementów w liscie wynosi : " + toyotas.size());
+
+
         Toyota toyota1 = new Toyota(2);
         toyotas.remove(2);
         toyotas.remove(toyota1);
