@@ -33,4 +33,11 @@ public class Mazda implements Car{
         }
 
     }
+
+    @Override
+    public String toString() {
+        return "Mazda{" +
+                "speed=" + speed +
+                '}';
+    }
 }

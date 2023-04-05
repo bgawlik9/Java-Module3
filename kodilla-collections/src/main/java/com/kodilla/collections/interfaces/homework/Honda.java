@@ -3,6 +3,7 @@ package com.kodilla.collections.interfaces.homework;
 public class Honda implements Car{
     int speed;
 
+
     public Honda(int speed) {
         this.speed = speed;
     }
@@ -33,5 +34,12 @@ public class Honda implements Car{
 
         }
 
+    }
+
+    @Override
+    public String toString() {
+        return "Honda{" +
+                "speed=" + speed +
+                '}';
     }
 }
