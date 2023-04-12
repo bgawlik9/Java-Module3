@@ -12,7 +12,7 @@ public class BasicMapExample {
         Double grade = grades.get("Mathematics");
         System.out.println(grade);
         for (Map.Entry<String,Double> note : grades.entrySet() ) {
-
+            System.out.println(" Grade of " + note.getKey() + " is equal to " + note.getValue());
         }
     }
     }
