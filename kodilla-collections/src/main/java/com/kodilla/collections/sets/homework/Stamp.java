@@ -34,8 +34,11 @@ public class Stamp {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
         Stamp stamp = (Stamp) o;
         return width == stamp.width && height == stamp.height && stamped == stamp.stamped && Objects.equals(name, stamp.name);
     }

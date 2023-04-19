@@ -6,7 +6,7 @@ import java.util.List;
 
 public class School {
 
-
+    int klass;
    private List<Integer> studentsInClass = new ArrayList<>();
 
     public School(List<Integer> students) {
@@ -21,7 +21,7 @@ public class School {
 
     @Override
     public String toString() {
-        return " Amount of stundents in each class " + studentsInClass.toString();
+        return " stundents in each class " + studentsInClass.toString();
     }
 
 }

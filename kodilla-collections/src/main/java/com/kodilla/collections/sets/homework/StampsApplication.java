@@ -1,12 +1,12 @@
 package com.kodilla.collections.sets.homework;
 
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class StampsApplication {
     public static void main(String[] args) {
         Set<Stamp> stamps = new HashSet<>();
+
 
         stamps.add(new Stamp("Geralt z Rivii", 20, 10, false));
         stamps.add(new Stamp("Gen.Kutrzeba", 30, 15, true));
@@ -25,5 +25,8 @@ public class StampsApplication {
 
         }
 
+
+
     }
-}
+
+    }
