@@ -31,6 +31,9 @@ public class FlightFinder {
 
     }
 
+    public int size(){
+       return flightFinder.size();
+    }
 
 
 }
