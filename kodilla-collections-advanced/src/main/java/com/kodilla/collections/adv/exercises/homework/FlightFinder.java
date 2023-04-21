@@ -13,7 +13,6 @@ public class FlightFinder {
         for (Flight searchedFlight : flightFinder){
             if(searchedFlight.getDeparture().equals(departure)){
                 flightsFrom.add(searchedFlight);
-
             }
         }
         return flightsFrom;
@@ -22,13 +21,11 @@ public class FlightFinder {
     public List<Flight> findFlightsTo(String arrival){
         List<Flight> flightsTo = new ArrayList<>();
         for (Flight searchedFlight : flightFinder){
-            if(searchedFlight.getArrival().equals(arrival))
-            {
+            if(searchedFlight.getArrival().equals(arrival)){
                 flightsTo.add(searchedFlight);
             }
         }
         return flightsTo;
-
     }
 
 
