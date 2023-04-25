@@ -2,8 +2,7 @@ package com.kodilla.collections.adv.exercises.homework;
 
 import org.junit.jupiter.api.Test;
 
-import javax.swing.event.ListDataEvent;
-import javax.swing.plaf.PanelUI;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,8 +25,11 @@ class FlightFinderTestSuite {
         flightsTable.add(new Flight("Warsaw","Prague"));
 
         //when
+
         List<Flight> result = flightFinder.findFlightsFrom("Warsaw");
+
         //then
+
         List<Flight> expectedList = new ArrayList<>();
         expectedList.add(new Flight("Warsaw","London"));
         expectedList.add(new Flight("Warsaw","Prague"));
