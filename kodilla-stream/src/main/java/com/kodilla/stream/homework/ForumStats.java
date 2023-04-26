@@ -9,6 +9,7 @@ public class ForumStats {
     public static void main(String[] args) {
 
         System.out.println(avgPostsOverEqual40Age(UsersRepository.getUsersList()));
+        System.out.println(avgPostsUnder40Age(UsersRepository.getUsersList()));
 
 
 
