@@ -1,5 +1,4 @@
 import com.kodilla.stream.User;
-import com.kodilla.stream.UsersRepository;
 import com.kodilla.stream.homework.ForumStats;
 import org.junit.jupiter.api.Test;
 
@@ -8,7 +7,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class ForumStatsTest {
+public class ForumStatsTestSuite {
 
 @Test
     public void shouldPostsOverEqual40Age(){
