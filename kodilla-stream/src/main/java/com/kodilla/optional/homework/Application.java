@@ -28,7 +28,7 @@ public class Application {
             }
 
 
-      getTeacherName(studentsList.get(1));
+        System.out.println(getTeacherName(studentsList.get(1)));
 
         }
 
