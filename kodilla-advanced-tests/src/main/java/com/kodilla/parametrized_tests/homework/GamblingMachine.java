@@ -41,4 +41,6 @@ public class GamblingMachine {
         }
         return numbers;
     }
+
+
 }
