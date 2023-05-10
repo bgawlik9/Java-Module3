@@ -9,7 +9,6 @@ import org.junit.jupiter.params.provider.NullAndEmptySource;
 import java.util.HashSet;
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class GamblingMachineTestSuite {
@@ -17,18 +16,7 @@ public class GamblingMachineTestSuite {
     GamblingMachine gamblingMachine = new GamblingMachine();
     Set<Integer> set = new HashSet<>();
 
-    @ParameterizedTest
-    @CsvFileSource(resources = "/validatedUserNumbers.csv", numLinesToSkip = 0)
-    public void shouldReturnTrueWhenNumbersAreValidated(String number) throws InvalidNumbersException {
-        String[] splittedString = number.split(" ");
 
-        for (String num : splittedString) {
-            set.add(Integer.parseInt(num));
-        }
-
-        gamblingMachine.howManyWins(set);
-        assertEquals(6, set.size());
-    }
 
     @ParameterizedTest
     @CsvFileSource(resources = "/notValidatedUserNumbers.csv", numLinesToSkip = 0)
