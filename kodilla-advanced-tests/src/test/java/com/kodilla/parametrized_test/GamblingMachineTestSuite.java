@@ -9,18 +9,37 @@ import org.junit.jupiter.params.provider.NullAndEmptySource;
 import java.util.HashSet;
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class GamblingMachineTestSuite {
 
+
     GamblingMachine gamblingMachine = new GamblingMachine();
-    Set<Integer> set = new HashSet<>();
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/userNumbers.csv", numLinesToSkip = 1)
+    public void shouldReturnCorrectNumberOfWins(String numbers) throws InvalidNumbersException {
+        Set<Integer> set = new HashSet<>();
+        String[] splittedString = numbers.split(" ");
+        for (String num : splittedString) {
+            set.add(Integer.parseInt(num));
+        }
+        int wins = gamblingMachine.howManyWins(set);
+
+        assertTrue(wins >= 0 && wins <= 6);
+        System.out.println(gamblingMachine.generateComputerNumbers());
+        assertEquals(wins, gamblingMachine.howManyWins(set));
+    }
+
+
+
 
 
 
     @ParameterizedTest
-    @CsvFileSource(resources = "/notValidatedUserNumbers.csv", numLinesToSkip = 0)
+    @CsvFileSource(resources = "/notValidatedUserNumbers.csv", numLinesToSkip = 1)
     public void shouldThrowExceptionWhenNumbersAreNotValidated(String number) throws InvalidNumbersException {
+        Set<Integer> set = new HashSet<>();
         String[] splittedString = number.split(" ");
 
         for (String num : splittedString) {
@@ -35,13 +54,14 @@ public class GamblingMachineTestSuite {
     @ParameterizedTest
     @NullAndEmptySource
     public void shouldThrowExceptionWhenSetIsNullOrEmpty(Set<Integer> input) {
+        Set<Integer> set = new HashSet<>();
         assertThrows(InvalidNumbersException.class, () -> gamblingMachine.howManyWins(set));
     }
 
     @ParameterizedTest
-    @CsvFileSource(resources = "/tooSmallSet.csv", numLinesToSkip = 0)
+    @CsvFileSource(resources = "/tooSmallSet.csv", numLinesToSkip = 1)
     public void shouldThrowExceptionWhenSetIsTooSmall(String number) throws InvalidNumbersException {
-
+        Set<Integer> set = new HashSet<>();
         String[] splittedString = number.split(" ");
 
         for (String num : splittedString) {
@@ -54,8 +74,9 @@ public class GamblingMachineTestSuite {
     }
 
     @ParameterizedTest
-    @CsvFileSource(resources = "/tooBigSet.csv", numLinesToSkip = 0)
+    @CsvFileSource(resources = "/tooBigSet.csv", numLinesToSkip = 1)
     public void shouldThrowExceptionWhenSetIsTooBig(String number) throws InvalidNumbersException {
+        Set<Integer> set = new HashSet<>();
         String[] splittedString = number.split(" ");
 
         for (String num : splittedString) {

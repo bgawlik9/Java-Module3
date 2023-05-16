@@ -33,7 +33,7 @@ public class GamblingMachine {
         return numbers.size() != 6;
     }
 
-    private Set<Integer> generateComputerNumbers() {
+    public Set<Integer> generateComputerNumbers() {
         Set<Integer> numbers = new HashSet<>();
         Random generator = new Random();
         while(numbers.size() < 6) {
