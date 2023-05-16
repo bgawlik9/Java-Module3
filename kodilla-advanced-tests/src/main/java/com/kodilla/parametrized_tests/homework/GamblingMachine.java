@@ -7,6 +7,7 @@ import java.util.Set;
 public class GamblingMachine {
 
     public int howManyWins(Set<Integer> userNumbers) throws InvalidNumbersException {
+
         validateNumbers(userNumbers);
         Set<Integer> computerNumbers = generateComputerNumbers();
         int count = 0;
@@ -33,14 +34,17 @@ public class GamblingMachine {
         return numbers.size() != 6;
     }
 
-    private Set<Integer> generateComputerNumbers() {
+    public Set<Integer> generateComputerNumbers() {
         Set<Integer> numbers = new HashSet<>();
         Random generator = new Random();
-        while(numbers.size() < 6) {
-            numbers.add(generator.nextInt(49) + 1);
-        }
-        return numbers;
+        while (numbers.size() < 6) {
+            int number = generator.nextInt(49) + 1;
+            if (!numbers.contains(number)) {
+                numbers.add(number);
+            }}
+            return numbers;
+
+
+
     }
-
-
 }
