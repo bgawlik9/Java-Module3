@@ -12,29 +12,33 @@ public class UserValidatorTestSuite {
     UserValidator userValidator = new UserValidator();
 
     @ParameterizedTest
-    @ValueSource(strings = {"test_name.32","joe70_","joe"})
-    public void shouldReturnTrueWhenUsernameIsCorrect(String username){
+    @ValueSource(strings = {"test_name.32", "joe70_", "joe"})
+    public void shouldReturnTrueWhenUsernameIsCorrect(String username) {
         boolean result = userValidator.validateUsername(username);
         assertTrue(result);
     }
+
     @ParameterizedTest
-    @ValueSource(strings = {"@JOE", "test_name<3","Grzegorz_Brzeczeszczykiewicz", " "})
+    @ValueSource(strings = {"@JOE", "test_name<3", "Grzegorz_Brzeczeszczykiewicz", " "})
     public void shouldReturnFalseWhenUserNameIsIncorrect(String username) {
         boolean result = userValidator.validateUsername(username);
         assertFalse(result);
     }
+
     @ParameterizedTest
     @ValueSource(strings = {"test@mail.com", "t.test-10@test-domain.pl"})
     public void shouldReturnTrueWhenEmailAddressIsCorrect(String email) {
         boolean result = userValidator.validateEmail(email);
         assertTrue(result);
     }
+
     @ParameterizedTest
     @ValueSource(strings = {"test'10@mail.com", "test@mail,com", "test@mail", "test.com", "test!@domain.pl"})
     public void shouldReturnFalseWhenEmailAddressIsIncorrect(String email) {
         boolean result = userValidator.validateEmail(email);
         assertFalse(result);
     }
+
     @ParameterizedTest
     @NullAndEmptySource
     public void shouldReturnWhenEmailAddressIsEmpty(String email) {

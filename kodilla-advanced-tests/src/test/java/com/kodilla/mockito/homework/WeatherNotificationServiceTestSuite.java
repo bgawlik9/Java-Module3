@@ -9,19 +9,19 @@ import static org.mockito.Mockito.verify;
 
 public class WeatherNotificationServiceTestSuite {
 
-        WeatherNotificationService weatherNotificationService = new WeatherNotificationService();
-        Client client1 = mock(Client.class);
-        Client client2 = mock(Client.class);
-        Location location1 = mock(Location.class);
-        Location location2 = mock(Location.class);
+    WeatherNotificationService weatherNotificationService = new WeatherNotificationService();
+    Client client1 = mock(Client.class);
+    Client client2 = mock(Client.class);
+    Location location1 = mock(Location.class);
+    Location location2 = mock(Location.class);
 
-        Notification notification = mock(Notification.class);
+    Notification notification = mock(Notification.class);
 
 
     @Test
     public void ShouldSubscribeClientToLocationAndGetNotification() {
         weatherNotificationService.addSubscriber(client1, location1);
-        weatherNotificationService.sendNotificationToLocation(notification,location1);
+        weatherNotificationService.sendNotificationToLocation(notification, location1);
 
         assertTrue(weatherNotificationService.isClientSubscribed(client1, location1));
         verify(client1).receive(notification);
@@ -84,5 +84,5 @@ public class WeatherNotificationServiceTestSuite {
     }
 
 
-    }
+}
 

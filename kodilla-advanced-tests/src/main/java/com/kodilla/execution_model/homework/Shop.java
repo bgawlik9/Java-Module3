@@ -41,14 +41,16 @@ public class Shop {
         }
         return ordersInRange;
     }
-    public int getNumberOfOrders(){
+
+    public int getNumberOfOrders() {
         return ordersList.size();
     }
-    public double getSumOfOrders(){
+
+    public double getSumOfOrders() {
 
         double sumOfOrder = 0;
 
-        for(Order value : ordersList){
+        for (Order value : ordersList) {
             sumOfOrder += value.getOrderValue();
         }
         return sumOfOrder;

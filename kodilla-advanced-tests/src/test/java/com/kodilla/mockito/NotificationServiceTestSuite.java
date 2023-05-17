@@ -12,7 +12,6 @@ public class NotificationServiceTestSuite {
     Notification notification = Mockito.mock(Notification.class);
 
 
-
     @Test
     public void notSubscribedClientShouldNotReceiveNotification() {
 
@@ -30,12 +29,12 @@ public class NotificationServiceTestSuite {
 
         notificationService.sendNotification(notification);
 
-        Mockito.verify(client,Mockito.times(1)).receive(notification);
+        Mockito.verify(client, Mockito.times(1)).receive(notification);
     }
 
     @Test
     public void notificationShouldBeSentToAllSubscribedClients() {
-       addSubscribers(client,secondClient,thirdClient);
+        addSubscribers(client, secondClient, thirdClient);
 
         notificationService.sendNotification(notification);
 
@@ -54,7 +53,6 @@ public class NotificationServiceTestSuite {
         Mockito.verify(client).receive(notification);
 
 
-
     }
 
     @Test
@@ -67,8 +65,9 @@ public class NotificationServiceTestSuite {
         Mockito.verify(client, Mockito.never()).receive(notification);
 
     }
+
     private void addSubscribers(Client... clients) {
-        for(Client currentClient : clients) {
+        for (Client currentClient : clients) {
             notificationService.addSubscriber(currentClient);
         }
     }

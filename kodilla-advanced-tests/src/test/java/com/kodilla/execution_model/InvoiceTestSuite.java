@@ -13,30 +13,30 @@ public class InvoiceTestSuite {
     Item Bread = new Item("Bread", 4.15);
 
 
+    @Test
+    public void shouldAddItemsToInvoice() {
 
-   @Test
-    public void shouldAddItemsToInvoice(){
+        //when
+        int numbersOfItem = invoice.getSize();
 
-       //when
-       int numbersOfItem = invoice.getSize();
-
-       //then
-       assertEquals(3,numbersOfItem);
-   }
-   @Test
-    public void shouldGetExistingItem() {
-
-       // when
-       Item result = invoice.getItem(2);
-
-       // then
-
-       assertEquals("Bread", result.getName());
-       assertEquals(4.15, result.getPrice(), 0.01);
-   }
+        //then
+        assertEquals(3, numbersOfItem);
+    }
 
     @Test
-    public void shouldReturnNullWhenPassingNegativeIndex(){
+    public void shouldGetExistingItem() {
+
+        // when
+        Item result = invoice.getItem(2);
+
+        // then
+
+        assertEquals("Bread", result.getName());
+        assertEquals(4.15, result.getPrice(), 0.01);
+    }
+
+    @Test
+    public void shouldReturnNullWhenPassingNegativeIndex() {
 
         // when
         Item result = invoice.getItem(-3);
@@ -46,7 +46,7 @@ public class InvoiceTestSuite {
     }
 
     @Test
-    public void shouldReturnNullWhenPassingOutOfRangeIndex(){
+    public void shouldReturnNullWhenPassingOutOfRangeIndex() {
 
         // when
         Item result = invoice.getItem(4);
@@ -56,17 +56,17 @@ public class InvoiceTestSuite {
     }
 
 
-@Test
-       public void shouldClearInvoice(){
-           // Given
+    @Test
+    public void shouldClearInvoice() {
+        // Given
 
-           int invoiceSizeBeforeClear = invoice.getSize();
-           // When
-           invoice.clear();
-           // Then
-            assertEquals(0,invoice.getSize());
-            assertEquals(3,invoiceSizeBeforeClear);
-   }
+        int invoiceSizeBeforeClear = invoice.getSize();
+        // When
+        invoice.clear();
+        // Then
+        assertEquals(0, invoice.getSize());
+        assertEquals(3, invoiceSizeBeforeClear);
+    }
 
     @BeforeEach
     public void initializeInvoice() {

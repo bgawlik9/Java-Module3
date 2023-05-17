@@ -11,7 +11,7 @@ public class PersonTestSuite {
 
     @ParameterizedTest
     @MethodSource(value = "com.kodilla.parametrized_test.homework.BmiTestData#provideBmiTestData")
-    public void shouldReturnProperString(Person person, String expected){
+    public void shouldReturnProperString(Person person, String expected) {
         assertEquals(expected, person.getBMI());
     }
 }

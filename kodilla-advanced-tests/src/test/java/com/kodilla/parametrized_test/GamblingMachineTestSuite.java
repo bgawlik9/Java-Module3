@@ -28,12 +28,8 @@ public class GamblingMachineTestSuite {
 
         int wins = gamblingMachine.howManyWins(set);
         System.out.println("Expected 6 wins, but got " + wins + " wins.");
-        assertTrue( wins <= 6,"Expected 6 wins, but got  + wins +  wins.");
+        assertTrue(wins <= 6, "Expected 6 wins, but got  + wins +  wins.");
     }
-
-
-
-
 
 
     @ParameterizedTest

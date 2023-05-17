@@ -10,18 +10,17 @@ public class WeatherNotificationService {
 
     private Map<Location, Set<Client>> subscribers;
 
-    public WeatherNotificationService(){
+    public WeatherNotificationService() {
         subscribers = new HashMap<>();
     }
 
-    public void addSubscriber(Client client, Location location){
+    public void addSubscriber(Client client, Location location) {
         if (!subscribers.containsKey(location)) {
             subscribers.put(location, new HashSet<>());
         }
         subscribers.get(location).add(client);
 
     }
-
 
 
     public void removeSubscriber(Client client, Location location) {
@@ -48,6 +47,7 @@ public class WeatherNotificationService {
         }
         return subscribedLocations;
     }
+
     public boolean isClientSubscribed(Client client, Location location) {
         return subscribers.containsKey(location) && subscribers.get(location).contains(client);
     }
@@ -59,6 +59,7 @@ public class WeatherNotificationService {
             }
         }
     }
+
     public void sendNotificationToAll(Notification notification) {
         for (Set<Client> clientSet : subscribers.values()) {
             for (Client client : clientSet) {

@@ -41,9 +41,9 @@ public class GamblingMachine {
             int number = generator.nextInt(49) + 1;
             if (!numbers.contains(number)) {
                 numbers.add(number);
-            }}
-            return numbers;
-
+            }
+        }
+        return numbers;
 
 
     }

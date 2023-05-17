@@ -13,7 +13,7 @@ public class ShopTestSuite {
     private Shop shop;
 
     @BeforeEach
-    public void createOrderList(){
+    public void createOrderList() {
         shop = new Shop();
         shop.addOrder(new Order(9.5, LocalDate.of(2023, 7, 1), "User1"));
         shop.addOrder(new Order(3.5, LocalDate.of(2023, 5, 20), "User2"));
@@ -28,12 +28,13 @@ public class ShopTestSuite {
     public void shouldCorrectlyAddOrder() {
         //when
         int initialSize = shop.getNumberOfOrders();
-        shop.addOrder(new Order(10,LocalDate.of(2023,1,5),"user1"));
+        shop.addOrder(new Order(10, LocalDate.of(2023, 1, 5), "user1"));
         int newSize = shop.getNumberOfOrders();
 
         //then
-        assertEquals(initialSize +1, newSize);
+        assertEquals(initialSize + 1, newSize);
     }
+
     @Test
     public void shouldGetOrdersInRange() {
         //when
@@ -55,6 +56,7 @@ public class ShopTestSuite {
         //then
         assertEquals(2, ordersByValueRange.size());
     }
+
     @Test
     public void shouldGetNumberOfOrders() {
         //when
@@ -63,6 +65,7 @@ public class ShopTestSuite {
         //then
         assertEquals(6, numberOfOrders);
     }
+
     @Test
     public void shouldGetSumOfOrders() {
         //when
