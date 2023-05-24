@@ -11,7 +11,7 @@ public class SimpleApplicationTestSuite {
 
     @Test
     public void shouldReturnCorrectMessage() {
-        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic");
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic.spring_dependency_injection");
         SkypeMessageService bean = context.getBean(SkypeMessageService.class);
         String message = bean.send("Test", "Any receiver");
         Assertions.assertNotNull(message);
@@ -19,7 +19,7 @@ public class SimpleApplicationTestSuite {
 
     @Test
     public void shouldProcessMessage() {
-        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic");
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic.spring_dependency_injection");
         SimpleApplication bean = context.getBean(SimpleApplication.class);
         String message = bean.processMessage("Test", "Any receiver");
         Assertions.assertEquals("Sending [Test] to: Any receiver using Skype", message);
