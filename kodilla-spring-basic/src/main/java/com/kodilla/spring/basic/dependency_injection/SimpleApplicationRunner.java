@@ -6,4 +6,5 @@ public class SimpleApplicationRunner {
         SimpleApplication application = new SimpleApplication(messageService);
         application.processMessage("Test message", "reciver@mail.com");
     }
+
 }
