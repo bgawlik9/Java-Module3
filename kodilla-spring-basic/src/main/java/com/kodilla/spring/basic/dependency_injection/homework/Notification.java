@@ -1,6 +1,6 @@
 package com.kodilla.spring.basic.dependency_injection.homework;
 
-public class Notification implements NotificationService{
+public class Notification implements NotificationService {
     @Override
     public void success(String address) {
         System.out.println("Package delivered to: " + address);
