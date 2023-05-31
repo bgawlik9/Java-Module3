@@ -32,18 +32,16 @@ public class CarConfiguration {
         }
     }
 
-    @Bean
     public LocalDate getLocalDate() {
         return LocalDate.of(2023, 5, 30);
     }
 
-    @Bean
     public LocalTime getLocalTime() {
         return LocalTime.of(3, 0);
     }
 
     @Bean
-    public Car rideACar() {
+    public Car getCarForSeasonAndTime() {
         getSeason(getLocalDate().getMonthValue());
         getTime(getLocalTime().getHour());
         Car car;
@@ -57,11 +55,11 @@ public class CarConfiguration {
         boolean turnOnLights = car.hasHeadlightsTurnedOn(timeOfDay);
         String lights;
         if (turnOnLights) {
-            lights = " turn on the lights.";
+            lights = " and lights are on.";
         } else {
-            lights = " don't turn on the lights.";
+            lights = " and lights are off.";
         }
-        System.out.println("It's " + season + ". Get " + car.getCarType() + lights);
+        System.out.println("It's " + season + ". Driving " + car.getCarType() + lights);
         return car;
     }
 

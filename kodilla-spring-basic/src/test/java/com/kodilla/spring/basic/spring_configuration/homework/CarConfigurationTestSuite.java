@@ -26,7 +26,7 @@ public class CarConfigurationTestSuite {
         // Given
         CarConfiguration car = context.getBean(CarConfiguration.class);
         // When
-        Car carSelect = car.rideACar();
+        Car carSelect = car.getCarForSeasonAndTime();
         // Then
         Assertions.assertEquals("Sedan", carSelect.getCarType());
     }
