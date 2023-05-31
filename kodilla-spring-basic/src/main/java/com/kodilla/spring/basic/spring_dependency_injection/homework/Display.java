@@ -8,4 +8,8 @@ public class Display {
     public void display(double value) {
         System.out.println("Wynik dzialania to: " + value);
     }
+
+    public void display(String value) {
+        System.out.println("Blad  " + value);
+    }
 }

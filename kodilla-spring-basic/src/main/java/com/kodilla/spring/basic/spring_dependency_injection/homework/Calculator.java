@@ -38,7 +38,8 @@ public class Calculator {
             display.display(result);
             return result;
         } else {
-            System.out.println("Nie mozna dzielic przez 0!");
+            String value = "Nie można dzielić przez 0!";
+            display.display(value);
             return 0;
         }
 
