@@ -16,7 +16,7 @@ class AnimalFactoryTestSuite {
     @Test
     public void shouldCreateDogBeanAndFetchByBeanName() {
         //Given
-        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic.spring_configuration");
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
         Dog dog = (Dog) context.getBean("createDog");
         //When
         String voice = dog.getVoice();
@@ -26,7 +26,7 @@ class AnimalFactoryTestSuite {
     @Test
     public void shouldCreateRandomAnimal() {
         //Given
-        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic.spring_configuration");
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
         Animal animal = (Animal) context.getBean("randomAnimal");
         //When
         String voice = animal.getVoice();
