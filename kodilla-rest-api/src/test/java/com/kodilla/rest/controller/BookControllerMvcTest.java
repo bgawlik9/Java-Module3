@@ -40,7 +40,8 @@ public class BookControllerMvcTest {
         Mockito.when(bookService.getBooks()).thenReturn(booksList);
 
         //when & then
-        mockMvc.perform(MockMvcRequestBuilders.get("/books")
+        mockMvc.perform(MockMvcRequestBuilders
+                        .get("/books")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().is(200))
                 .andExpect(MockMvcResultMatchers.jsonPath("$", Matchers.hasSize(2)));
