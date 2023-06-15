@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class AllegroTestingApp {
+public class EbayTestingApp {
     public static void main(String[] args) {
 
         System.setProperty("webdriver.chrome.driver", "C:\\Selenium-drivers\\Chrome\\chromedriver.exe");
@@ -27,7 +27,6 @@ public class AllegroTestingApp {
 
         WebElement searchButton = driver.findElement(By.xpath("//input[@id='gh-btn']"));
         searchButton.click();
-
 
     }
 }
