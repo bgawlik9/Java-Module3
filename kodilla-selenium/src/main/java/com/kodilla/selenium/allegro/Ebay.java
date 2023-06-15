@@ -37,7 +37,6 @@ public class Ebay {
         List<WebElement> productCards = driver.findElements(By.cssSelector("#srp-river-results > ul"));
         for (WebElement card : productCards) {
             System.out.println(card.getText());
-            System.out.println("-----------------------------------");
         }
 
     }
