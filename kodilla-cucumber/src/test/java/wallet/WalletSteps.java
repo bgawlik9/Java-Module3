@@ -11,7 +11,7 @@ public class WalletSteps {
 
     @Given("I have deposited $200 in my wallet")
     public void i_have_deposited_$200_in_my_wallet() {
-       // Wallet wallet = new Wallet();
+        Wallet wallet = new Wallet();
         wallet.deposit(200);
         Assertions.assertEquals(200, wallet.getBalance(), "Incorrect wallet balance");
     }
