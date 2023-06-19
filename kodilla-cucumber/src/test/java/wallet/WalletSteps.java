@@ -51,7 +51,7 @@ public class WalletSteps {
     @When("I request $300")
     public void i_request_$300() {
         Cashier cashier = new Cashier(cashSlot);
-        cashier.withdraw(wallet, 0);
+        cashier.withdraw(wallet, 300);
     }
     @Then("no cash should be dispensed")
     public void no_cash_should_be_dispensed() {
