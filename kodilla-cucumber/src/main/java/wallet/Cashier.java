@@ -12,7 +12,7 @@ public class Cashier {
         wallet.debit(amount);
         cashSlot.dispense(amount);
         } else {
-            System.out.println("NO MONEY");
+            return;
         }
     }
 
