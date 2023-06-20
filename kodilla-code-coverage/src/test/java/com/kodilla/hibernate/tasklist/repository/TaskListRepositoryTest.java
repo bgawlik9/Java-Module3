@@ -9,17 +9,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.List;
 
 @SpringBootTest
-public class TaskListRepositoryTestSuite {
-
+class TaskListRepositoryTest {
     private static final String DESCRIPTION = "Random text, just to fill this field";
     private static final String listName = "asfgdfasg";
 
     @Autowired
-
     private TaskListRepository taskListRepository;
 
     @Test
-
     public void testFindByListName() {
         //Given
         TaskList taskList = new TaskList(listName, DESCRIPTION);
@@ -35,4 +32,5 @@ public class TaskListRepositoryTestSuite {
         //CleanUp
         taskListRepository.delete(taskList);
     }
+
 }
