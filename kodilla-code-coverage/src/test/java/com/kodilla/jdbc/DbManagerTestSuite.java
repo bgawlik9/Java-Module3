@@ -12,18 +12,24 @@ import java.util.List;
 
 class DbManagerTestSuite {
     private static DbManager dbManager;
+
     @BeforeAll
+
     public static void setup() throws SQLException {
         dbManager = DbManager.getInstance();
     }
+
     @Test
+
     void testConnect() {
         //Given
         //When
         //Then
         Assertions.assertNotNull(dbManager.getConnection());
     }
+
         @Test
+
         void testSelectUsers() throws SQLException {
             //Given
             String countQuery = "SELECT COUNT(*) FROM USERS";
@@ -88,7 +94,9 @@ class DbManagerTestSuite {
             }
             return count;
         }
+
     @Test
+
     void testSelectUsersAndPosts() throws SQLException {
         // Given
         String sqlQuery = "SELECT USERS.FIRSTNAME, USERS.LASTNAME " +
@@ -98,25 +106,22 @@ class DbManagerTestSuite {
                 "HAVING COUNT(*) >= 2";
 
         // When
-        Statement statement = createStatement();
-        ResultSet rs = statement.executeQuery(sqlQuery);
+        try (Statement statement = createStatement();
+             ResultSet rs = statement.executeQuery(sqlQuery)) {
 
-        // Then
-        int counter = 0;
-        while (rs.next()) {
-            String firstName = rs.getString("FIRSTNAME");
-            String lastName = rs.getString("LASTNAME");
-            System.out.printf("%s %s%n", firstName, lastName);
-            counter++;
+            // Then
+            int counter = 0;
+            while (rs.next()) {
+                String firstName = rs.getString("FIRSTNAME");
+                String lastName = rs.getString("LASTNAME");
+                System.out.printf("%s %s%n", firstName, lastName);
+                counter++;
+            }
+
+            // Assertion
+            Assertions.assertEquals(2, counter);
         }
-
-        rs.close();
-        statement.close();
-
-        // Assertion
-        Assertions.assertEquals(2, counter);
     }
-
 
 
 }
