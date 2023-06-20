@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.List;
 
 @SpringBootTest
-class TaskListRepositoryTest {
+class TaskListRepositoryTestSuite {
     private static final String DESCRIPTION = "Random text, just to fill this field";
     private static final String listName = "asfgdfasg";
 
